@@ -1,3 +1,14 @@
 .navbar-container {
-    background-color: blueviolet;
+    background-color: #8568FF;
+    /* full width */
+  width: 100%;
+  /* Fixed height */
+  height: 60px;
+  background-color: #8568ff;
+  /* flex box */
+  display: flex;
+}
+
+.navbar-items{
+    
 }
