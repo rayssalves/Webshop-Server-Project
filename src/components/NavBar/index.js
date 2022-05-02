@@ -76,13 +76,13 @@ const NavBar = () => {
       <div class="icons">
         <ul>
           <li>
-            <img src="/assets/Icon.png"></img>
+            <img src="/assets/Icon.png" alt="user"></img>
           </li>
           <li>
-            <img src="/assets/fluent_cart-24-regular.png"></img>
+            <img src="/assets/fluent_cart-24-regular.png" alt="card"></img>
           </li>
           <li>
-            <img src="/assets/uil_heart-alt.png"></img>
+            <img src="/assets/uil_heart-alt.png" alt="like"></img>
           </li>
         </ul>
       </div>
