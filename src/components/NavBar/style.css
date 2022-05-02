@@ -10,5 +10,19 @@
 }
 
 .navbar-items{
+    flex-grow: 1;
+    justify-content: space-between;
     
+    
+  
+}
+
+ul li{
+    display:inline;
+    padding: 10px;
+   
+}
+.links{
+    text-decoration: none;
+    color: #101750;
 }
