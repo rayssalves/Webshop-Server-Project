@@ -1,7 +1,7 @@
 export default function ShopPage() {
   return (
     <div>
-      <h1>This is the Home Page</h1>
+      <h1>This is the Shop Page</h1>
     </div>
   );
 }
