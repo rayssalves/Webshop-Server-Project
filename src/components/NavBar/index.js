@@ -1,9 +1,16 @@
 import "./style.css";
+import { NavLink } from "react-router-dom";
 
-export default function NavBar() {
+const NavBar = () => {
   return (
-    <div className="nav-bar-container">
-      <header>This is the NavBar</header>
-    </div>
+    <nav>
+      <ul>
+        <li>
+          <NavLink></NavLink>
+        </li>
+      </ul>
+    </nav>
   );
-}
+};
+
+export { NavBar }; //reader asks to do like this
