@@ -70,7 +70,19 @@ const NavBar = () => {
           </ul>
         </nav>
       </div>
-      <div class="icons"></div>
+      <div class="icons">
+        <ul>
+          <li>
+            <img src="/assets/Icon.png"></img>
+          </li>
+          <li>
+            <img src="/assets/fluent_cart-24-regular.png"></img>
+          </li>
+          <li>
+            <img src="/assets/uil_heart-alt.png"></img>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
