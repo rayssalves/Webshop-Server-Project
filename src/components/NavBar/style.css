@@ -2,8 +2,7 @@
     background-color: #8568FF;
     /* full width */
   width: 100%;
-  /* Fixed height */
-  height: 60px;
+
   background-color: #8568ff;
   /* flex box */
   display: flex;
@@ -25,4 +24,14 @@ ul li{
 .links{
     text-decoration: none;
     color: #101750;
+}
+.logo{
+    text-decoration: none;
+    font-size: 34px;
+
+    margin-right: 95px
+}
+
+.logo span{
+    color:white
 }
