@@ -70,6 +70,7 @@ const NavBar = () => {
           </ul>
         </nav>
       </div>
+      <div class="icons"></div>
     </div>
   );
 };
