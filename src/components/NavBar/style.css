@@ -31,4 +31,10 @@ ul li{
 
     margin-right: 95px
 }
-
+.logo span{
+    color: white;
+}
+.input{
+    background: url("../../../public/assets/Vector.png") no-repeat scroll 7px 7px;
+    padding-left:30px;  
+}
