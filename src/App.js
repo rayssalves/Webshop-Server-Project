@@ -10,13 +10,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar />
-        <Footer />
       </header>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/details/:id" element={<DetailsPage />} />
       </Routes>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

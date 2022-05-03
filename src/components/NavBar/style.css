@@ -30,8 +30,8 @@ ul li{
 
 .logo{
     text-decoration: none;
-    font-size: 34px;
-
+    font-size: 38px;
+    display: flex;
     margin-right: 95px
 }
 .logo span{
