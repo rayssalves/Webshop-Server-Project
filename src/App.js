@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { NavBar } from "./components"; //now gathers all components in the directory
+import { NavBar, Footer } from "./components"; //now gathers all components in the directory
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import DetailsPage from "./pages/DetailsPage";
@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar />
+        <Footer />
       </header>
       <Routes>
         <Route path="/" element={<HomePage />} />
