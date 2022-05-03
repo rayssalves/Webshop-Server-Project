@@ -1,0 +1,31 @@
+.header-container {
+    width: 100%;
+    max-height: 500px;
+    background: linear-gradient(#8568FF, #9d4ef8);
+    display:inline-flex;
+    overflow: hidden;
+}
+
+.header-title {
+    color: white;
+    padding: 200px 50px;
+    font-family: 'Sen', sans-serif;
+    font-size: larger;
+    font-weight:normal;
+    display: flex;
+}
+
+.image-container {
+    height: 700px;
+    max-width: 400px;
+    margin: 70px auto 0px auto;
+    background-color: ivory;
+    border-radius: 5%;
+    overflow: hidden;
+    box-shadow: 3px 3px 4px 4px rgb(121, 25, 232);
+}
+
+.image-style-center {
+    text-align: center;
+    width: 400px;
+}
