@@ -76,7 +76,7 @@ const NavBar = () => {
           alt="search icon"
           src="/assets/Vector.png"
         />
-        <input className="search-text"></input>
+        <input className="search-text" placeholder="Search"></input>
       </div>
       <div className="icons">
         <ul>
