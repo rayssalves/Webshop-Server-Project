@@ -4,8 +4,9 @@ position: fixed;
 padding: 10px 10px 0px 10px;
 bottom: 0;
 width: 100%; 
-height: 250px;
+max-height: 250px;
 display: flex;
+justify-content: flex-start;
 }
 
 .logo-footer span{
@@ -25,5 +26,27 @@ justify-content: left;
 }
 .categories-colum{
     color:white;
+    font-size: 14px;
+    margin-right: 120px;
+    margin-left: 120px;
+    
 
 }
+.my-account{
+    color:white;
+    font-size: 14px;
+    margin-right: 120px;
+    margin-left: 120px;
+    
+}
+
+.Follow-us{
+    color:white;
+    font-size: 14px;
+    margin-left: 140px;
+    
+}
+.list-products{
+    display: grid;
+}
+
