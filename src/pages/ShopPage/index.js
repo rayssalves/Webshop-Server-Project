@@ -3,6 +3,7 @@ import { NavBar } from "../../components";
 import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import CategoriesChecklist from "../../components/Categories_CheckList";
 
 export default function ShopPage() {
   const [getProducts, setProducts] = useState([]);
@@ -24,6 +25,9 @@ export default function ShopPage() {
     <div>
       <NavBar />
       <Header />
+      <div>
+        <CategoriesChecklist />
+      </div>
       <div>
         <div className="productCard-container">
           {getProducts.map((product, index) => (
