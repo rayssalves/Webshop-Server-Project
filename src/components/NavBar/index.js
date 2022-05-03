@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div class="navbar-container">
-      <div class="navbar-items">
+    <div className="navbar-container">
+      <div className="navbar-items">
         <nav>
           <ul>
             <li>
@@ -16,9 +16,9 @@ const NavBar = () => {
               <NavLink
                 to="/"
                 className="links"
-                style={({ isActive }) =>
-                  isActive ? { color: "white" } : undefined
-                }
+                // style={({ isActive }) =>
+                //   isActive ? { color: "white" } : undefined
+                // }
               >
                 Home
               </NavLink>
@@ -27,9 +27,9 @@ const NavBar = () => {
               <NavLink
                 to="/products"
                 className="links"
-                style={({ isActive }) =>
-                  isActive ? { color: "white" } : undefined
-                }
+                // style={({ isActive }) =>
+                //   isActive ? { color: "white" } : undefined
+                // }
               >
                 Products
               </NavLink>
@@ -38,9 +38,9 @@ const NavBar = () => {
               <NavLink
                 to="/blog"
                 className="links"
-                style={({ isActive }) =>
-                  isActive ? { color: "white" } : undefined
-                }
+                // style={({ isActive }) =>
+                //   isActive ? { color: "white" } : undefined
+                // }
               >
                 Blog
               </NavLink>
@@ -60,9 +60,9 @@ const NavBar = () => {
               <NavLink
                 to="/contact"
                 className="links"
-                style={({ isActive }) =>
-                  isActive ? { color: "white" } : undefined
-                }
+                // style={({ isActive }) =>
+                //   isActive ? { color: "white" } : undefined
+                // }
               >
                 Contact
               </NavLink>
@@ -70,10 +70,10 @@ const NavBar = () => {
           </ul>
         </nav>
       </div>
-      <div class="input">
+      <div className="input">
         <input></input>
       </div>
-      <div class="icons">
+      <div className="icons">
         <ul>
           <li>
             <img src="/assets/Icon.png" alt="user"></img>

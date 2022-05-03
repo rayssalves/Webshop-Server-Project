@@ -25,6 +25,11 @@ ul li{
     text-decoration: none;
     color: #101750;
 }
+
+.links.active {
+    color: white;
+}
+
 .logo{
     text-decoration: none;
     font-size: 34px;
