@@ -25,7 +25,7 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink
-                to="/products"
+                to="/shop"
                 className="links"
                 // style={({ isActive }) =>
                 //   isActive ? { color: "white" } : undefined
@@ -45,9 +45,9 @@ const NavBar = () => {
                 Blog
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
-                to="/shop"
+                to=""
                 className="links"
                 style={({ isActive }) =>
                   isActive ? { color: "white" } : undefined
@@ -55,7 +55,7 @@ const NavBar = () => {
               >
                 Shop
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 to="/contact"
