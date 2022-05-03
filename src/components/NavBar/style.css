@@ -12,8 +12,6 @@
     flex-grow: 1;
     justify-content: space-between;
     
-    
-  
 }
 
 ul li{
@@ -34,7 +32,27 @@ ul li{
 .logo span{
     color: white;
 }
+
+.search-icon {
+    background-color: white;
+    height: 1em;
+    width: 1em;
+    padding: 0.25rem;
+    border-radius: 10% 0 0 10% ;
+}
+
+.search-text {
+    padding:0;
+    border:0;
+
+}
 .input{
-    background: url("../../../public/assets/Vector.png") no-repeat scroll 7px 7px;
+    /* background: url("../../../public/assets/Vector.png") no-repeat scroll 7px 7px; */
     padding-left:30px;  
+    display: flex;
+    height: 1.5rem;
+    flex-direction: row;
+    margin-top: 25px;
+  
+    
 }

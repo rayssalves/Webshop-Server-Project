@@ -71,7 +71,12 @@ const NavBar = () => {
         </nav>
       </div>
       <div class="input">
-        <input></input>
+        <img
+          className="search-icon"
+          alt="search icon"
+          src="/assets/Vector.png"
+        />
+        <input className="search-text"></input>
       </div>
       <div class="icons">
         <ul>
