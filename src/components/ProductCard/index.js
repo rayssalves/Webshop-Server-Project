@@ -1,16 +1,20 @@
+import "./style.css";
+
 export default function ProductCard(props) {
   return (
-    <div>
+    <div className="product-card">
       <div>
-        <h4>{props.title}</h4>
-        <h3>{props.price}</h3>
-        <h3>{props.rating}</h3>
+        <img className="product-image" src={props.image} alt={props.title} />
       </div>
-      <div>
-        <img src={props.image} alt={props.title} />
-      </div>
-      <div>
-        <p>{props.description}</p>
+      <div className="card-info">
+        <div>
+          <h4>{props.title}</h4>
+          <h3>{props.price}</h3>
+          <h3>{props.rating}</h3>
+        </div>
+        <div>
+          <p>{props.description}</p>
+        </div>
       </div>
     </div>
   );
