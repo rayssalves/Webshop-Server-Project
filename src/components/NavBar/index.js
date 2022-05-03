@@ -70,7 +70,7 @@ const NavBar = () => {
           </ul>
         </nav>
       </div>
-      <div class="input">
+      <div className="input">
         <img
           className="search-icon"
           alt="search icon"

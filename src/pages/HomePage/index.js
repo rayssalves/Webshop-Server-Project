@@ -1,7 +1,11 @@
+import Header from "../../components/Header";
+import { NavBar } from "../../components";
+
 export default function ShopPage() {
   return (
     <div>
-      <h1>This is the Home Page</h1>
+      <NavBar />
+      <Header />
     </div>
   );
 }
