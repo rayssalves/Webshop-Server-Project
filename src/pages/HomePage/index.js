@@ -1,12 +1,18 @@
 import { NavBar } from "../../components";
 import Header from "../../components/Header";
+import { NavLink } from "react-router-dom";
+import "./style.css";
 
 export default function ShopPage() {
   return (
     <div>
       <NavBar />
       <Header />
-      <h1>Here we need a home page placeholder</h1>
+      <div className="homepage-body">
+        <NavLink className="products-page-button" to="/shop">
+          Our products
+        </NavLink>
+      </div>
     </div>
   );
 }

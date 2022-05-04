@@ -1,0 +1,13 @@
+.homepage-body {
+    display: flex;
+    background: url("https://i.pinimg.com/564x/ad/35/a2/ad35a2d4c7e31e8a5b5f0c157921bb6d.jpg");
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-page-button {
+    font-size: 40px;
+}

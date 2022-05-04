@@ -16,7 +16,7 @@ export default function ShopPage() {
         console.log(res.data);
         setCategories(res.data);
       } catch (error) {
-        response.status(500).send({ error: error.message });
+        console.log(error.message);
       }
     }
     getAllTheCategories();
@@ -29,7 +29,7 @@ export default function ShopPage() {
         console.log(res.data);
         setProducts(res.data);
       } catch (error) {
-        response.status(500).send({ error: error.message });
+        console.log(error.message);
       }
     }
     getAllTheProducts();
