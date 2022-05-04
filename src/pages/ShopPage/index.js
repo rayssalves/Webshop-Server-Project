@@ -1,5 +1,3 @@
-import Header from "../../components/Header";
-import { NavBar } from "../../components";
 import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
