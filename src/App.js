@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
