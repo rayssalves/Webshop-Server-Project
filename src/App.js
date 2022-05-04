@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { NavBar, Footer } from "./components"; //now gathers all components in the directory
+import { Footer } from "./components"; //now gathers all components in the directory
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import DetailsPage from "./pages/DetailsPage";

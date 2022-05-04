@@ -1,0 +1,23 @@
+.productCard-container {
+    display:inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-card{
+    padding: 30px;
+    margin: 30px;
+    width: 800px;
+    background-color: bisque;
+    display: flex;
+}
+
+.product-image {
+    max-width: 200px;
+}
+
+.card-info{
+    text-align:left;
+    padding: 15px;
+    margin: 10px;
+}
