@@ -8,7 +8,7 @@ const DetailsPage = () => {
   const [details, setDetails] = useState(null);
 
   useEffect(() => {
-    async function fetchDetails() {
+    async function fetchDetails(request, response) {
       const response = await axios.get(
         `http://localhost:4000/products/${routeParams.id}`
       );
@@ -22,16 +22,16 @@ const DetailsPage = () => {
     <div>
       <h1>{details.title}</h1>
       <div>
-        <img src={details.mainImage} alt="product" />
+        <img src={details.mainImage} alt=details.title />
         <div>
           <h2>€{details.price}</h2>
-          <p>{details.description}</p>
+          <p>Details:{details.description}</p>
           <p>{details.rating}</p>
         </div>
       </div>
     </div>
   ) : (
-    <p>...</p>
+    <p>This product is not available anymore...</p>
   );
 };
 
