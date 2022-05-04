@@ -15,9 +15,9 @@ const DetailsPage = () => {
           `http://localhost:4000/products/${routeParams.id}`
         );
         console.log(response.data);
-        setDetails(response.data);
+        return setDetails(response.data);
       } catch (error) {
-        console.log({ error: error.message });
+        return console.log({ error: error.message });
       }
     }
     fetchDetails();

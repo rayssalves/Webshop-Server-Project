@@ -13,9 +13,9 @@ export default function ShopPage() {
       try {
         const response = await axios.get("http://localhost:4000/categories");
         console.log(response.data);
-        setCategories(response.data);
+        return setCategories(response.data);
       } catch (error) {
-        console.log({ error: error.message });
+        return console.log({ error: error.message });
       }
     }
     getAllTheCategories();
@@ -26,9 +26,9 @@ export default function ShopPage() {
       try {
         const response = await axios.get("http://localhost:4000/products");
         console.log(response.data);
-        setProducts(response.data);
+        return setProducts(response.data);
       } catch (error) {
-        console.log({ error: error.message });
+        return console.log({ error: error.message });
       }
     }
     getAllTheProducts();
