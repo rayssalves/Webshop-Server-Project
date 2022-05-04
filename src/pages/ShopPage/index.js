@@ -35,8 +35,6 @@ export default function ShopPage() {
 
   return (
     <div>
-      <NavBar />
-      <Header />
       <div className="categories-list">
         <div>
           <h2>Categories</h2>
