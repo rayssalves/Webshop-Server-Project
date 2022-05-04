@@ -1,0 +1,9 @@
+.product-title{
+
+}
+.product-img{
+    width: 30%;
+}
+.product-container{
+    display: flex;
+}

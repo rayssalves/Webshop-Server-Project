@@ -19,14 +19,26 @@ const DetailsPage = () => {
   }, []);
 
   return details ? (
-    <div>
-      <h1>{details.title}</h1>
+    <div className="product-container">
       <div>
-        <img src={details.mainImage} alt="product" />
+        <img className="product-img" src={details.mainImage} alt="product" />
+      </div>
+      <div>
+        <div className="product-title">
+          <h1>{details.title}</h1>
+          <p>{details.rating}</p>
+          <button>Add Review</button>
+        </div>
         <div>
           <h2>€{details.price}</h2>
+        </div>
+        <div>
           <p>{details.description}</p>
-          <p>{details.rating}</p>
+          <button>Add to cart</button>
+          <button>
+            <img src="/assets/uil_heart-alt.png" alt="like" />
+            Favorite
+          </button>
         </div>
       </div>
     </div>
@@ -34,5 +46,15 @@ const DetailsPage = () => {
     <p>...</p>
   );
 };
+
+{
+  /* <div className="this-is-a-row">
+  <img>
+  <div className="this-is-a-column>
+    <span>{text1}</span>
+    <span>{text2}</span>
+  </div>
+</div> */
+}
 
 export { DetailsPage };
