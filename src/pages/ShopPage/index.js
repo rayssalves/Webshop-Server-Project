@@ -2,39 +2,62 @@ import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CategoriesChecklist from "../../components/Categories_CheckList";
+import { PageLayoutWithBanner } from "../../layout/PageWithBanner";
 
 export default function ShopPage() {
   const [getCategories, setCategories] = useState([]);
   const [getProducts, setProducts] = useState([]);
 
   useEffect(() => {
-    async function getAllTheCategories(request, response) {
+    async function getAllTheCategories() {
       try {
-        const res = await axios.get("http://localhost:4000/categories");
-        console.log(res.data);
-        setCategories(res.data);
+        const response = await axios.get("http://localhost:4000/categories");
+        console.log(response.data);
+        setCategories(response.data);
       } catch (error) {
-        console.log(error.message);
+        console.log({ error: error.message });
       }
     }
     getAllTheCategories();
   }, []);
 
   useEffect(() => {
-    async function getAllTheProducts(request, response) {
+    async function getAllTheProducts() {
       try {
-        const res = await axios.get("http://localhost:4000/products");
-        console.log(res.data);
-        setProducts(res.data);
+        const response = await axios.get("http://localhost:4000/products");
+        console.log(response.data);
+        setProducts(response.data);
       } catch (error) {
-        console.log(error.message);
+        console.log({ error: error.message });
       }
     }
     getAllTheProducts();
   }, []);
 
+  // const filterByCategory = () => {
+
+  // }
+
+  /*
+    // big component (state management)
+    categoryStatus  = {
+      0: false
+      1: false
+      2: false
+      3: false
+    }
+
+    setCategoryStatus({
+      ...categoryStatus,
+      [id]: !categoryStatus[id]
+    })
+
+    prodcuts.filter(product => categoryStatus[product.categoryId])
+
+  */
+
   return (
-    <div>
+    <PageLayoutWithBanner>
       <div className="categories-list">
         <div>
           <h2>Categories</h2>
@@ -64,6 +87,6 @@ export default function ShopPage() {
           ))}
         </div>
       </div>
-    </div>
+    </PageLayoutWithBanner>
   );
 }

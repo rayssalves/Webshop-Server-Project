@@ -2,38 +2,20 @@ import "./style.css";
 import { useState } from "react";
 
 export default function CategoriesChecklist(props) {
-  const [checkBox, setCheckBox] = useState(false);
+  const [checkbox, setCheckbox] = useState(false);
 
   // const handleCheck = () => {
-  // setCheckbox(!checkBox)
-  // props.updateCategoryStatus(props.id)
+  //   setCheckbox(!checkbox);
+  //   props.updateCategoryStatus(props.id);
   // };
 
-  /*
-    // big component (state management)
-    categoryStatus  = {
-      0: false
-      1: false
-      2: false
-      3: false
-    }
-
-    setCategoryStatus({
-      ...categoryStatus,
-      [id]: !categoryStatus[id]
-    })
-
-    prodcuts.filter(product => categoryStatus[product.categoryId])
-
-  */
-
   const checkboxChange = () => {
-    setCheckBox(!checkBox);
+    setCheckbox(!checkbox);
   };
-  console.log(checkBox);
+  console.log(checkbox);
 
   return (
-    <div key={props.id} checked={checkBox} onChange={checkboxChange}>
+    <div key={props.id} checked={checkbox} onChange={checkboxChange}>
       <label>
         <input type="checkbox" />
         {props.title}
