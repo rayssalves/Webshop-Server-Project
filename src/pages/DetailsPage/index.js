@@ -8,7 +8,7 @@ const DetailsPage = () => {
   const [details, setDetails] = useState(null);
 
   useEffect(() => {
-    async function fetchDetails(request, response) {
+    async function fetchDetails() {
       const response = await axios.get(
         `http://localhost:4000/products/${routeParams.id}`
       );
@@ -22,7 +22,7 @@ const DetailsPage = () => {
     <div>
       <h1>{details.title}</h1>
       <div>
-        <img src={details.mainImage} alt={details.title} />
+        <img src={details.mainImage} alt="products" />
         <div>
           <h2>€{details.price}</h2>
           <p>Details:{details.description}</p>
