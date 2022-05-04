@@ -22,7 +22,7 @@ const DetailsPage = () => {
     <div>
       <h1>{details.title}</h1>
       <div>
-        <img src={details.mainImage} alt=details.title />
+        <img src={details.mainImage} alt={details.title} />
         <div>
           <h2>€{details.price}</h2>
           <p>Details:{details.description}</p>
