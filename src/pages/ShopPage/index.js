@@ -6,7 +6,21 @@ import { useEffect, useState } from "react";
 import CategoriesChecklist from "../../components/Categories_CheckList";
 
 export default function ShopPage() {
+  const [getCategories, setCategories] = useState([]);
   const [getProducts, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function getAllTheCategories(request, response) {
+      try {
+        const res = await axios.get("http://localhost:4000/categories");
+        console.log(res.data);
+        setCategories(res.data);
+      } catch (error) {
+        response.status(500).send({ error: error.message });
+      }
+    }
+    getAllTheCategories();
+  }, []);
 
   useEffect(() => {
     async function getAllTheProducts(request, response) {
@@ -25,12 +39,23 @@ export default function ShopPage() {
     <div>
       <NavBar />
       <Header />
-      <div>
-        <CategoriesChecklist />
+      <div className="categories-list">
+        <div>
+          <h2>Categories</h2>
+        </div>
+        <div>
+          {getCategories.map((category) => (
+            <CategoriesChecklist
+              key={category.id}
+              id={category.id}
+              title={category.title}
+            />
+          ))}
+        </div>
       </div>
       <div>
         <div className="productCard-container">
-          {getProducts.map((product, index) => (
+          {getProducts.map((product) => (
             <ProductCard
               key={product.id}
               id={product.id}

@@ -1,29 +1,36 @@
 import "./style.css";
+import { useState } from "react";
 
-export default function CategoriesChecklist() {
+export default function CategoriesChecklist(props) {
+  const [getCheckBox, setCheckBox] = useState(false);
+
+  const checkboxChange = () => {
+    setCheckBox(!getCheckBox);
+  };
+  console.log(getCheckBox);
+
   return (
-    <div>
-      <div>
-        <h2>Categories</h2>
-      </div>
-      <div className="categories-list">
-        <label>
-          <input type="checkbox" />
-          Eletronics
-        </label>
-        <label>
-          <input type="checkbox" />
-          Jewelery
-        </label>
-        <label>
-          <input type="checkbox" />
-          Men's clothing
-        </label>
-        <label>
-          <input type="checkbox" />
-          Women's clothing
-        </label>
-      </div>
+    <div key={props.id} checked={getCheckBox} onChange={checkboxChange}>
+      <label>
+        <input type="checkbox" />
+        {props.title}
+      </label>
     </div>
   );
 }
+
+// return (
+//   <div>
+//     <label>
+//       <input
+//         type="checkbox"
+//         checked={checked}
+//         onChange={checkboxChange}
+//       />
+//       My Value
+//     </label>
+
+//     <p>Is "My Value" checked? {checked.toString()}</p>
+//   </div>
+// );
+// };
