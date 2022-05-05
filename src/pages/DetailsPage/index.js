@@ -25,23 +25,55 @@ const DetailsPage = () => {
 
   return (
     <PageLayoutWithBanner>
-      <div>
-        {details ? (
+      {details && (
+        <div className="product-container">
           <div>
-            <h1>{details.title}</h1>
+            <img
+              className="product-img"
+              src={details.mainImage}
+              alt="product"
+            />
+          </div>
+          <div>
+            <div className="product-title">
+              <h1>{details.title}</h1>
+              <p>
+                <img src="/assets/Group 236.png" alt="rating starts" />
+                {details.rating}{" "}
+                <button className="add-review">Add Review</button>
+              </p>
+            </div>
             <div>
-              <img src={details.mainImage} alt={details.title} />
+              <h2 className="price">€{details.price}</h2>
+            </div>
+            <div className="second-container">
+              <p></p>
+              <p className="description">{details.description}</p>
+              <button className="button-add-to-card">
+                <img
+                  className="icon-separation"
+                  src="/assets/fluent_cart-24-regular.png"
+                  alt="like"
+                />
+                Add to cart
+              </button>
+              <button className="favorite">
+                <img
+                  className="icon-separation"
+                  src="/assets/Group 235.png"
+                  alt="like"
+                />
+                Favorite
+              </button>
               <div>
-                <h2>€{details.price}</h2>
-                <p>Rating: {details.rating}</p>
-                <p>Details:{details.description}</p>
+                <p>
+                  Share <img src="/assets/Group 205.png" alt="like" />
+                </p>
               </div>
             </div>
           </div>
-        ) : (
-          <p>This product is not available anymore...</p>
-        )}
-      </div>
+        </div>
+      )}
     </PageLayoutWithBanner>
   );
 };
