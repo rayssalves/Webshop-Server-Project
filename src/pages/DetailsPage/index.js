@@ -33,6 +33,7 @@ const DetailsPage = () => {
           <h2>€{details.price}</h2>
         </div>
         <div>
+          []
           <p>{details.description}</p>
           <button>Add to cart</button>
           <button>
