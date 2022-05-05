@@ -1,43 +1,21 @@
-.navbar-container {
-    background-color: #8568FF;
-    /* full width */
-  width: 100%;
-
-  background-color: #8568ff;
-  /* flex box */
-  display: flex;
-}
-
-.navbar-items{
-    flex-grow: 1;
-    justify-content: space-between;
-    
-}
-
 ul li{
     display:inline;
-    padding: 10px;
-   
+    padding: 10px; 
 }
 .links{
     text-decoration: none;
     color: #101750;
 }
-
 .links.active {
     color: white;
 }
-
 .logo{
     text-decoration: none;
     font-size: 38px;
-    display: flex;
-    margin-right: 95px
 }
 .logo span{
     color: white;
 }
-
 .search-icon {
     background-color: white;
     height: 1em;
@@ -45,19 +23,25 @@ ul li{
     padding: 0.25rem;
     border-radius: 10% 0 0 10% ;
 }
-
 .search-text {
     padding:0;
     border:0;
-
 }
 .input{
-    /* background: url("../../../public/assets/Vector.png") no-repeat scroll 7px 7px; */
-    padding-left:30px;  
     display: flex;
     height: 1.5rem;
-    flex-direction: row;
-    margin-top: 25px;
-  
-    
+    flex-direction: row; 
+}
+.navbar-items{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: space-between;
+} 
+.navbar-container {
+  width: 100%;
+  background-color: #8568ff;
+  display: flex;
+  align-items: center;
 }

@@ -13,35 +13,17 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/"
-                className="links"
-                // style={({ isActive }) =>
-                //   isActive ? { color: "white" } : undefined
-                // }
-              >
+              <NavLink to="/" className="links">
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/shop"
-                className="links"
-                // style={({ isActive }) =>
-                //   isActive ? { color: "white" } : undefined
-                // }
-              >
+              <NavLink to="/shop" className="links">
                 Products
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/blog"
-                className="links"
-                // style={({ isActive }) =>
-                //   isActive ? { color: "white" } : undefined
-                // }
-              >
+              <NavLink to="/blog" className="links">
                 Blog
               </NavLink>
             </li>
@@ -57,13 +39,7 @@ const NavBar = () => {
               </NavLink>
             </li> */}
             <li>
-              <NavLink
-                to="/contact"
-                className="links"
-                // style={({ isActive }) =>
-                //   isActive ? { color: "white" } : undefined
-                // }
-              >
+              <NavLink to="/contact" className="links">
                 Contact
               </NavLink>
             </li>
