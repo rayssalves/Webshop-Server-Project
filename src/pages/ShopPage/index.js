@@ -1,3 +1,4 @@
+import "./style.css";
 import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -5,9 +6,8 @@ import CategoriesChecklist from "../../components/CategoriesCheckList";
 import { PageLayoutWithBanner } from "../../layout/PageWithBanner";
 
 export default function ShopPage() {
+  //Function to fetch all the CATEGORIES from the Database
   const [getCategories, setCategories] = useState([]);
-  const [getProducts, setProducts] = useState([]);
-  const [categoryStatus, setCategoryStatus] = useState([]);
 
   useEffect(() => {
     async function getAllTheCategories() {
@@ -21,15 +21,8 @@ export default function ShopPage() {
     getAllTheCategories();
   }, []);
 
-  useEffect(() => {
-    const categories = getCategories.map((category) => {
-      return {
-        id: category.id,
-        status: false,
-      };
-    });
-    setCategoryStatus(categories);
-  }, [getCategories]);
+  // Function to fetch all the PRODUCTS from the Database
+  const [getProducts, setProducts] = useState([]);
 
   useEffect(() => {
     async function getAllTheProducts() {
@@ -43,13 +36,36 @@ export default function ShopPage() {
     getAllTheProducts();
   }, []);
 
+  //Filters to get the specific products from the complete array
+  const [categoryStatus, setCategoryStatus] = useState([]);
+
+  // Map to build the checklist first state in this page.
+  // The IDs came from the component. False is the unchecked state.
+  // It will return an array of category objects, with Id and status [()]
+  useEffect(() => {
+    const categories = getCategories.map((category) => {
+      return {
+        id: category.id,
+        status: false,
+      };
+    });
+    //Set the first categoryStatus with this new array and make it remap when there is a change in the category
+    // This means, everytime a checkbox change its state
+    setCategoryStatus(categories);
+  }, [getCategories]);
+
+  //Based in the ID that returns in the previous map, we can make a filter in the products to get a new filtered array
   const getFilteredProducts = () => {
     const checkCategories = categoryStatus.filter(
       (category) => category.status === true
     );
+    // The filter ALWAYS returns an array, so we need to check if there is at least an element from the filter
+    // If it's an empty array, we return the no filtered products
     if (checkCategories.length === 0) {
       return getProducts;
     }
+    // If there is something in the array, the products will be filtered based in the categories that were equals
+    // Filter all the products where you find the same categories
     return getProducts.filter((product) => {
       return checkCategories.find(
         (category) => category.id === product.categoryId
@@ -57,6 +73,9 @@ export default function ShopPage() {
     });
   };
 
+  // This is the function passed to the component as props.
+  // It will receive back the categoryId from the checked checkboxes
+  // This map will set a new value to the state and then change the CategoryStatus one more time
   const setCategoryState = (categoryId) => {
     const newCategoriesStatus = categoryStatus.map((category) => {
       if (category.id === categoryId) {
@@ -72,54 +91,38 @@ export default function ShopPage() {
 
   return (
     <PageLayoutWithBanner>
-      <div className="categories-list">
-        <div>
-          <h2>Categories</h2>
+      <div className="shopPage-container">
+        <div className="categories-component">
+          <div className="categories-title">
+            <h2>Categories</h2>
+          </div>
+          <div>
+            {getCategories.map((category) => (
+              <CategoriesChecklist
+                key={category.id}
+                id={category.id}
+                title={category.title}
+                setCategoryState={setCategoryState}
+              />
+            ))}
+          </div>
         </div>
-        <div>
-          {getCategories.map((category) => (
-            <CategoriesChecklist
-              key={category.id}
-              id={category.id}
-              title={category.title}
-              setCategoryState={setCategoryState}
-            />
-          ))}
-        </div>
-      </div>
-      <div>
-        <div className="productCard-container">
-          {getFilteredProducts().map((product) => (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              title={product.title}
-              price={product.price}
-              description={product.description}
-              rating={product.rating}
-              image={product.mainImage}
-            />
-          ))}
+        <div className="products-container">
+          <div className="productCard-container">
+            {getFilteredProducts().map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                title={product.title}
+                price={product.price}
+                description={product.description}
+                rating={product.rating}
+                image={product.mainImage}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </PageLayoutWithBanner>
   );
 }
-
-/*
-    // big component (state management)
-    categoryStatus  = {
-      0: false
-      1: false
-      2: false
-      3: false
-    }
-
-    setCategoryStatus({
-      ...categoryStatus,
-      [id]: !categoryStatus[id]
-    })
-
-    prodcuts.filter(product => categoryStatus[product.categoryId])
-
-  */

@@ -6,7 +6,7 @@ export default function CategoriesChecklist(props) {
   };
 
   return (
-    <div key={props.id}>
+    <div className="categories-list" key={props.id}>
       <label>
         <input
           type="checkbox"
