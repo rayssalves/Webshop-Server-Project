@@ -37,11 +37,17 @@ ul li{
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: wrap;
- 
+    
 } 
 .navbar-container {
   background-color: #8568ff;
   display: flex;
   align-items: center;
+}
+
+.navbar-items nav ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 

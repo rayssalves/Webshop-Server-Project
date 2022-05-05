@@ -65,7 +65,8 @@ h1{
 
 }
 .product-img{
-    width: 30%;
+    width: 300px;
+    padding: 70px;
 }
 .product-container{
     display: flex;
