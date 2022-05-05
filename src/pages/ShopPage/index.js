@@ -1,3 +1,4 @@
+import "./style.css";
 import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -22,16 +23,6 @@ export default function ShopPage() {
   }, []);
 
   useEffect(() => {
-    const categories = getCategories.map((category) => {
-      return {
-        id: category.id,
-        status: false,
-      };
-    });
-    setCategoryStatus(categories);
-  }, [getCategories]);
-
-  useEffect(() => {
     async function getAllTheProducts() {
       try {
         const response = await axios.get("http://localhost:4000/products");
@@ -42,6 +33,16 @@ export default function ShopPage() {
     }
     getAllTheProducts();
   }, []);
+
+  useEffect(() => {
+    const categories = getCategories.map((category) => {
+      return {
+        id: category.id,
+        status: false,
+      };
+    });
+    setCategoryStatus(categories);
+  }, [getCategories]);
 
   const getFilteredProducts = () => {
     const checkCategories = categoryStatus.filter(
@@ -72,54 +73,38 @@ export default function ShopPage() {
 
   return (
     <PageLayoutWithBanner>
-      <div className="categories-list">
-        <div>
-          <h2>Categories</h2>
+      <div className="shopPage-container">
+        <div className="categories-component">
+          <div className="categories-title">
+            <h2>Categories</h2>
+          </div>
+          <div>
+            {getCategories.map((category) => (
+              <CategoriesChecklist
+                key={category.id}
+                id={category.id}
+                title={category.title}
+                setCategoryState={setCategoryState}
+              />
+            ))}
+          </div>
         </div>
-        <div>
-          {getCategories.map((category) => (
-            <CategoriesChecklist
-              key={category.id}
-              id={category.id}
-              title={category.title}
-              setCategoryState={setCategoryState}
-            />
-          ))}
-        </div>
-      </div>
-      <div>
-        <div className="productCard-container">
-          {getFilteredProducts().map((product) => (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              title={product.title}
-              price={product.price}
-              description={product.description}
-              rating={product.rating}
-              image={product.mainImage}
-            />
-          ))}
+        <div className="products-container">
+          <div className="productCard-container">
+            {getFilteredProducts().map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                title={product.title}
+                price={product.price}
+                description={product.description}
+                rating={product.rating}
+                image={product.mainImage}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </PageLayoutWithBanner>
   );
 }
-
-/*
-    // big component (state management)
-    categoryStatus  = {
-      0: false
-      1: false
-      2: false
-      3: false
-    }
-
-    setCategoryStatus({
-      ...categoryStatus,
-      [id]: !categoryStatus[id]
-    })
-
-    prodcuts.filter(product => categoryStatus[product.categoryId])
-
-  */

@@ -1,0 +1,24 @@
+.shopPage-container {
+    display: flex;
+    justify-content:center;
+    padding: 5px;
+}
+
+.categories-component {
+    padding: 30px;
+    margin: 30px;
+}
+
+.categories-title{
+    color: #151875;
+    padding: 15px;
+    text-align: left;
+}
+
+.productCard-container {
+    flex-direction: column;
+}
+
+.products-container{
+    padding: 5px;
+}
