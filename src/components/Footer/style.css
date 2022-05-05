@@ -7,7 +7,7 @@
 
 .logo-footer{
     font-size: 34px;
-justify-content: left;
+    justify-content: left;
     margin-right: 95px;
     color: #8568FF;;
 }
@@ -36,8 +36,6 @@ justify-content: left;
 }
 .footer-container{
     background-color: #0D0E43;
-    position: fixed;
-    bottom: 0;
     width: 100%; 
     max-height: 250px;
     display: flex;

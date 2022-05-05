@@ -37,11 +37,11 @@ ul li{
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: wrap;
-    align-content: space-between;
+ 
 } 
 .navbar-container {
-  width: 100%;
   background-color: #8568ff;
   display: flex;
   align-items: center;
 }
+
