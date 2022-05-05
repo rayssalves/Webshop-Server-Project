@@ -70,5 +70,5 @@ h1{
 .product-container{
     display: flex;
     align-items: center;
-  
+  padding: 50px;
 }
