@@ -5,7 +5,7 @@ export default function Header() {
     <div className="header-container">
       <div className="header-title">
         <h2>
-          Products for every need <br /> at the distance of a click
+          Products for every need, <br /> at the distance of a click
         </h2>
       </div>
       <div className="image-container">
