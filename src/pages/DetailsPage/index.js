@@ -26,20 +26,38 @@ const DetailsPage = () => {
       <div>
         <div className="product-title">
           <h1>{details.title}</h1>
-          <p>{details.rating}</p>
-          <button>Add Review</button>
+          <p>
+            <img src="/assets/Group 236.png" alt="rating starts" />
+            {details.rating} <button className="add-review">Add Review</button>
+          </p>
         </div>
         <div>
-          <h2>€{details.price}</h2>
+          <h2 className="price">€{details.price}</h2>
         </div>
-        <div>
-          []
-          <p>{details.description}</p>
-          <button>Add to cart</button>
-          <button>
-            <img src="/assets/uil_heart-alt.png" alt="like" />
+        <div className="second-container">
+          <p></p>
+          <p className="description">{details.description}</p>
+          <button className="button-add-to-card">
+            <img
+              className="icon-separation"
+              src="/assets/fluent_cart-24-regular.png"
+              alt="like"
+            />
+            Add to cart
+          </button>
+          <button className="favorite">
+            <img
+              className="icon-separation"
+              src="/assets/Group 235.png"
+              alt="like"
+            />
             Favorite
           </button>
+          <div>
+            <p>
+              Share <img src="/assets/Group 205.png" alt="like" />
+            </p>
+          </div>
         </div>
       </div>
     </div>
