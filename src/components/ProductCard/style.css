@@ -1,0 +1,32 @@
+h2{
+    color: #111C85;
+    margin: 0px;
+}
+
+h3{
+    color: #111C85;
+}
+
+p{
+    color: #9295AA;
+}
+
+.product-card{
+    display: flex;
+    padding: 30px;
+    margin: 30px;
+    width: 800px;
+    border-radius: 3%;
+    box-shadow: 2px 2px 3px 3px rgb(220, 220, 220);
+}
+
+.product-image {
+    max-width: 200px;
+    padding: 15px;
+    border-radius: 10%;
+}
+
+.card-info{
+    text-align:left;
+    padding: 15px;
+}

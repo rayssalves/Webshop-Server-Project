@@ -1,7 +1,15 @@
+import { NavLink } from "react-router-dom";
+import { PageLayoutWithBanner } from "../../layout/PageWithBanner";
+import "./style.css";
+
 export default function ShopPage() {
   return (
-    <div>
-      <h1>This is the Home Page</h1>
-    </div>
+    <PageLayoutWithBanner>
+      <div className="homepage-body">
+        <NavLink className="products-page-button" to="/shop">
+          Our products
+        </NavLink>
+      </div>
+    </PageLayoutWithBanner>
   );
 }
