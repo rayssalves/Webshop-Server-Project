@@ -6,9 +6,11 @@ export default function ShopPage() {
   return (
     <PageLayoutWithBanner>
       <div className="homepage-body">
-        <NavLink className="products-page-button" to="/shop">
-          Our products
-        </NavLink>
+        <button className="home-page-button">
+          <NavLink className="products-page-button" to="/shop">
+            All the products
+          </NavLink>
+        </button>
       </div>
     </PageLayoutWithBanner>
   );
