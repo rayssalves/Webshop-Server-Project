@@ -55,23 +55,22 @@ export default function ShopPage() {
         status: parseInt(categoryId) === category.id,
       };
     });
-    //Set the first categoryStatus with this new array and make it remap when there is a change in the category
-    // This means, everytime a checkbox change its state
+    //Set the first categoryStatus with this new array and make it remap when there is a change in the category from database
     setCategoryStatus(categories);
   }, [getCategories]);
 
-  //Based in the ID that returns in the previous map, we can make a filter in the products to get a new filtered array
+  //Based in the status that returns in the previous map, we can make a filter in the products to get a new filtered array
   const getFilteredProducts = () => {
     const checkCategories = categoryStatus.filter(
       (category) => category.status === true
     );
     // The filter ALWAYS returns an array, so we need to check if there is at least an element from the filter
-    // If it's an empty array, we return the no filtered products
+    // If it's an empty array, we return all the products
     if (checkCategories.length === 0) {
       return getProducts;
     }
     // If there is something in the array, the products will be filtered based in the categories that were equals
-    // Filter all the products where you find the same categories
+    // Filter all the products where you find the same value category
     return getProducts.filter((product) => {
       return checkCategories.find(
         (category) => category.id === product.categoryId
