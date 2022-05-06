@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { PageLayoutWithBanner } from "../../layout/PageWithBanner";
 import axios from "axios";
+import ReactStars from "react-rating-stars-component";
 import "./style.css";
 
 const DetailsPage = () => {
@@ -38,8 +39,12 @@ const DetailsPage = () => {
             <div className="product-title">
               <h1>{details.title}</h1>
               <p>
-                <img src="/assets/Group 236.png" alt="rating starts" />
-                {details.rating}{" "}
+                <ReactStars
+                  count={5}
+                  size={24}
+                  activeColor="#ffd700"
+                  value={details.rating}
+                />
                 <button className="add-review">Add Review</button>
               </p>
             </div>
