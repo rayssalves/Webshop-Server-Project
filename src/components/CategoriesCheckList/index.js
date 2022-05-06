@@ -8,12 +8,7 @@ export default function CategoriesChecklist(props) {
   return (
     <div className="categories-list" key={props.id}>
       <label>
-        <input
-          type="checkbox"
-          id={props.id}
-          checked={props.checkbox}
-          onClick={checkboxChange}
-        />
+        <input type="checkbox" id={props.id} onClick={checkboxChange} />
         {props.title}
       </label>
     </div>
