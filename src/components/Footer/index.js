@@ -17,28 +17,23 @@ const Footer = () => {
         <h1>Categories</h1>
         <ul className="list-products">
           <li>
-            <NavLink to="/" className="links-footer">
-              Laptops & Computers
+            <NavLink to={`/shop/${1}`} className="links-footer">
+              Electronics
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" className="links-footer">
-              Cameras & Photography
+            <NavLink to={`/shop/${2}`} className="links-footer">
+              Jewelery
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" className="links-footer">
-              Smart Phones & Tablets
+            <NavLink to={`/shop/${3}`} className="links-footer">
+              Men's Clothing
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" className="links-footer">
-              Video Games & Consoles
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/" className="links-footer">
-              Waterproof Headphones
+            <NavLink to={`/shop/${4}`} className="links-footer">
+              Women's Clothing
             </NavLink>
           </li>
         </ul>
