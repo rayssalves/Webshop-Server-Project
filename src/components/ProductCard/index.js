@@ -1,5 +1,6 @@
 import "./style.css";
 import { NavLink } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 
 export default function ProductCard(props) {
   return (
@@ -16,7 +17,12 @@ export default function ProductCard(props) {
         <div className="text-content-product">
           <div>
             <h3>€{props.price}</h3>
-            <h3>Rating: {props.rating}</h3>
+            <ReactStars
+              count={5}
+              size={24}
+              activeColor="#ffd700"
+              value={props.rating}
+            />
           </div>
           <div>
             <p>{props.description}</p>
