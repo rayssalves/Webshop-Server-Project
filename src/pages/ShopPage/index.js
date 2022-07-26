@@ -1,5 +1,4 @@
 import "./style.css";
-import { useParams } from "react-router-dom";
 import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -7,10 +6,8 @@ import CategoriesChecklist from "../../components/CategoriesCheckList";
 import { PageLayoutWithBanner } from "../../layout/PageWithBanner";
 
 export default function ShopPage() {
-  const routeParams = useParams();
   //Function to fetch all the CATEGORIES from the Database
   const [getCategories, setCategories] = useState([]);
-  let categoryToBeChecked = null;
 
   useEffect(() => {
     async function getAllTheCategories() {
@@ -42,17 +39,14 @@ export default function ShopPage() {
   //Filters to get the specific products from the complete array
   const [categoryStatus, setCategoryStatus] = useState([]);
 
-  console.log("categoryStatus", categoryStatus);
-
   // Map to build the checklist first state in this page.
   // The IDs came from the component. False is the unchecked state.
   // It will return an array of category objects, with Id and status [()]
   useEffect(() => {
-    const categoryId = routeParams.category;
     const categories = getCategories.map((category) => {
       return {
         id: category.id,
-        status: parseInt(categoryId) === category.id,
+        status: false,
       };
     });
     //Set the first categoryStatus with this new array and make it remap when there is a change in the category from database
@@ -82,7 +76,6 @@ export default function ShopPage() {
   // It will receive back the categoryId from the checked checkboxes
   // This map will set a new value to the state and then change the CategoryStatus one more time
   const setCategoryState = (categoryId) => {
-    console.log(categoryStatus);
     const newCategoriesStatus = categoryStatus.map((category) => {
       if (category.id === categoryId) {
         return {
@@ -93,11 +86,6 @@ export default function ShopPage() {
       return category;
     });
     setCategoryStatus(newCategoriesStatus);
-  };
-
-  const checkCategory = (categoryId) => {
-    const category = categoryStatus.find((n) => n.id === categoryId);
-    return category?.status || false;
   };
 
   return (
@@ -113,7 +101,6 @@ export default function ShopPage() {
                 key={category.id}
                 id={category.id}
                 title={category.title}
-                checkbox={checkCategory(category.id)}
                 setCategoryState={setCategoryState}
               />
             ))}
